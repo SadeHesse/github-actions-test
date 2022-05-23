@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: eccho a string
-        run: echo "Hola mundo desde workflow"
+        run: eccho "Hola mundo desde workflow"
       - name: multiline script
         run: |
           node -v
