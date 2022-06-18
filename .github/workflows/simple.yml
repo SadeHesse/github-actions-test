@@ -12,3 +12,22 @@ jobs:
         run: |
           node -v
           npm -v
+      - name: creacion de random file
+        run : |
+          pwd
+          ls -a
+          git init
+          ls -a
+          git remote add origin "Https://$GITHUB_ACTOR:${{secrets.GITHUB_TOKEN}}@github.com/$GITHUB_REPOSITORY.git"
+          git config --global user.email "mybot@bot.com"
+          git config --global user.name "my bot"
+          git fetch
+          git checkout main
+          git branch --set-upstream-to=origin/main
+          git pull
+          ls -a
+          echo $RANDOM >>random.txt
+          ls -a
+          git add .
+          git commit -m "add random file"
+          git push
